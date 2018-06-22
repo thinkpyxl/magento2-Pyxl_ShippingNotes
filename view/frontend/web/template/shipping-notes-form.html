@@ -1,0 +1,12 @@
+
+<li id="shipping-notes" class="checkout-shipping-notes">
+    <div class="step-title" data-role="title" data-bind="i18n: 'Shipping Notes'"></div>
+    <div id="checkout-step-notes" class="step-content" data-role="content">
+        <form id="shipping-notes-form" class="form form-shipping-address"
+              data-bind="attr: {'data-hasrequired': $t('* Required Fields')}, event: {change: onFormChange()}">
+            <!-- ko foreach: getRegion('shipping-notes-form-fields') -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!--/ko-->
+        </form>
+    </div>
+</li>

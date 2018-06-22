@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    Pyxl
+ * @package     Pyxl_ShippingNotes
+ * @copyright   © Pyxl, Inc. All rights reserved.
+ * @license     See LICENSE.txt for license details.
+ * @author      Joel Rainwater <jrainwater@pyxl.com>
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/carts/mine/set-order-shipping-notes" method="PUT">
+        <service class="Pyxl\ShippingNotes\Api\ShippingNotesRepositoryInterface" method="saveShippingNotes"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="cartId" force="true">%cart_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/guest-carts/:cartId/set-order-shipping-notes" method="PUT">
+        <service class="Pyxl\ShippingNotes\Api\ShippingNotesGuestRepositoryInterface" method="saveShippingNotes"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+</routes>

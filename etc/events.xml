@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    Pyxl
+ * @package     Pyxl_ShippingNotes
+ * @copyright   © Pyxl, Inc. All rights reserved.
+ * @license     See LICENSE.txt for license details.
+ * @author      Joel Rainwater <jrainwater@pyxl.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_model_service_quote_submit_before">
+        <observer name="pyxl_checkout_shipping_notes_add_to_order" instance="Pyxl\ShippingNotes\Observer\AddShippingNotesToOrder" />
+    </event>
+</config>

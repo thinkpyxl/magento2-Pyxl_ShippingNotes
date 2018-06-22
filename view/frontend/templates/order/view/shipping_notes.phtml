@@ -1,0 +1,20 @@
+<?php
+/** @var Pyxl\ShippingNotes\Block\Order\ShippingNotes $block */
+
+/** @var Pyxl\ShippingNotes\Model\Data\ShippingNotes $shippingNotes */
+$shippingNotes = $block->getShippingNotes($block->getOrder());
+?>
+<?php if($shippingNotes): ?>
+	<div class="block block-order-details-view">
+		<div class="block-content">
+			<div class="box">
+				<strong class="box-title">
+					<span><?php /* @escapeNotVerified */ echo __('Shipping Notes') ?></span>
+				</strong>
+				<div class="box-content">
+					<?php echo nl2br($this->escapeHtml($shippingNotes->getCheckoutShippingNotes())); ?>
+				</div>
+			</div>
+		</div>
+	</div>
+<?php endif; ?>

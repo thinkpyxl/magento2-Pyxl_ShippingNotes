@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    Pyxl
+ * @package     Pyxl_ShippingNotes
+ * @copyright   © Pyxl, Inc. All rights reserved.
+ * @license     See LICENSE.txt for license details.
+ * @author      Joel Rainwater <jrainwater@pyxl.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Sales\Block\Adminhtml\Order\View\Info">
+        <plugin name="Pyxl_checkout_shipping_notes_show_fields"
+                type="Pyxl\ShippingNotes\Plugin\Block\Adminhtml\ShippingNotesPlugin" sortOrder="99999" />
+    </type>
+</config>

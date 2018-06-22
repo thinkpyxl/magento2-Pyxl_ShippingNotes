@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    Pyxl
+ * @package     Pyxl_ShippingNotes
+ * @copyright   © Pyxl, Inc. All rights reserved.
+ * @license     See LICENSE.txt for license details.
+ * @author      Joel Rainwater <jrainwater@pyxl.com>
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Pyxl\ShippingNotes\Block\Order\ShippingNotes" as="ordershippingnotes"
+                   name="sales.order.shippingnotes" after="sales.order.info"/>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,23 @@
+<?php
+/** @var Magento\Backend\Block\Template $block */
+
+/** @var Pyxl\ShippingNotes\Model\Data\ShippingNotes $shippingNotes */
+$shippingNotes = $block->getOrderShippingNotes();
+?>
+<?php if($shippingNotes): ?>
+	<section class="admin__page-section">
+		<div class="admin__page-section-title">
+			<span class="title"><?php /* @escapeNotVerified */ echo __('Other information') ?></span>
+		</div>
+		<div class="admin__page-section-content">
+			<div class="order-information">
+				<div class="box">
+					<strong class="box-title"><span><?php /* @escapeNotVerified */ echo __('Shipping Notes') ?></span></strong>
+					<div class="box-content">
+						<?php echo nl2br($this->escapeHtml($shippingNotes->getCheckoutShippingNotes())); ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<?php endif; ?>
