@@ -38,6 +38,10 @@
                                                                                         <item name="cols" xsi:type="string">10</item>
                                                                                         <item name="rows" xsi:type="string">4</item>
                                                                                     </item>
+                                                                                    <item name="validation" xsi:type="array">
+                                                                                        <item name="max_text_length" xsi:type="number">240</item>
+                                                                                    </item>
+                                                                                    <item name="notice" xsi:type="string" translate="true">Limited to 240 characters.</item>
                                                                                     <item name="provider" xsi:type="string">checkoutProvider</item>
                                                                                     <item name="dataScope" xsi:type="string">shippingNotesForm.checkout_shipping_notes</item>
                                                                                     <item name="label" xsi:type="string" translate="true">Enter Shipping Notes</item>
