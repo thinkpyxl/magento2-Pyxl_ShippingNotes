@@ -9,8 +9,21 @@ define([
     'Magento_Checkout/js/model/url-builder',
     'Magento_Checkout/js/model/error-processor',
     'Magento_Checkout/js/model/cart/cache',
-    'Pyxl_ShippingNotes/js/model/checkout/shipping-notes-form'
-], function(ko, $, urlFormatter, Component, customer, quote, urlBuilder, errorProcessor, cartCache, formData) {
+    'Pyxl_ShippingNotes/js/model/checkout/shipping-notes-form',
+    'Magento_Checkout/js/model/full-screen-loader'
+], function(
+    ko,
+    $,
+    urlFormatter,
+    Component,
+    customer,
+    quote,
+    urlBuilder,
+    errorProcessor,
+    cartCache,
+    formData,
+    fullScreenLoader
+) {
     'use strict';
 
     return Component.extend({
@@ -53,6 +66,7 @@ define([
             this.source.trigger('shippingNotesForm.data.validate');
 
             if (!this.source.get('params.invalid')) {
+                fullScreenLoader.startLoader();
                 var formData = this.source.get('shippingNotesForm');
                 var quoteId = quote.getQuoteId();
                 var isCustomer = customer.isLoggedIn();
@@ -85,6 +99,10 @@ define([
                     function (response) {
                         result = false;
                         errorProcessor.process(response);
+                    }
+                ).always(
+                    function () {
+                        fullScreenLoader.stopLoader();
                     }
                 );
 

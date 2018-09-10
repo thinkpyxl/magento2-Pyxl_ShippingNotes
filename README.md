@@ -6,7 +6,7 @@ shipping notes to the order.
 To install into your existing Magento site run the following two commands.
 
     composer config repositories.pyxl-shippingnotes git https://github.com/thinkpyxl/magento2-Pyxl_ShippingNotes.git
-    composer require pyxl/module-shippingnotes:^1.0.4
+    composer require pyxl/module-shippingnotes:^1.0.5
     bin/magento module:enable Pyxl_ShippingNotes
     bin/magento setup:upgrade
     bin/magento cache:clean
