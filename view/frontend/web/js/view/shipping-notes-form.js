@@ -66,7 +66,7 @@ define([
             this.source.trigger('shippingNotesForm.data.validate');
 
             if (!this.source.get('params.invalid')) {
-                fullScreenLoader.startLoader();
+                // fullScreenLoader.startLoader();
                 var formData = this.source.get('shippingNotesForm');
                 var quoteId = quote.getQuoteId();
                 var isCustomer = customer.isLoggedIn();
@@ -102,7 +102,7 @@ define([
                     }
                 ).always(
                     function () {
-                        fullScreenLoader.stopLoader();
+                        // fullScreenLoader.stopLoader();
                     }
                 );
 
